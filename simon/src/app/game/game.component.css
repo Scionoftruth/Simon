@@ -1,21 +1,39 @@
 .green {
-    background: green;
+    background-color: green;
+    animation-name: colorchangegreen;
+    animation-duration: .15s;
  }
+ @keyframes colorchangegreen {
+    from {background-color: green;}
+    to {background-color: limegreen;}
+   }
  .red {
  background-color: red;
- animation-name: colorchange;
+ animation-name: colorchangered;
  animation-duration: .15s;
 }
-@keyframes colorchange {
+@keyframes colorchangered {
  from {background-color: #FF0000;}
- to {background-color: #e67373;}
+ to {background-color: lightcoral;}
 }
  .yellow {
-    background: yellow;
+    background-color: yellow;
+    animation-name: colorchangeyellow;
+    animation-duration: .15s;
  }
+ @keyframes colorchangeyellow {
+    from {background-color: yellow;}
+    to {background-color: lightgoldenrodyellow;}
+   }
  .blue {
     background: blue;
+    animation-name: colorchangeblue;
+    animation-duration: .15s;
  }
+ @keyframes colorchangeblue {
+    from {background-color: blue;}
+    to {background-color: lightblue;}
+   }
  .limeGreen{
      background: limegreen;
  }
