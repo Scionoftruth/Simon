@@ -10,6 +10,10 @@ export class GameComponent implements OnInit {
 
   userList = [];
   simonList: number[]= [];
+  isClickedGreen = false;
+  isClickedRed = false;
+  isClickedYellow = false;
+  isClickedBlue = false;
 
   constructor() { }
 
@@ -59,5 +63,9 @@ export class GameComponent implements OnInit {
     audio.src = "../../../assets/simonSound4.mp3";
     audio.load();
     audio.play();
+  }
+
+  highlightGreen(){
+    
   }
 }
