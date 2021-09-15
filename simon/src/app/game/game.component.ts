@@ -33,5 +33,31 @@ export class GameComponent implements OnInit {
     this.simonList.push(4)
   }
 
-  
+  playGreen(){
+    let audio = new Audio();
+    audio.src = "../../../assets/simonSound1.mp3";
+    audio.load();
+    audio.play();
+  }
+
+  playRed(){
+    let audio = new Audio();
+    audio.src = "../../../assets/simonSound2.mp3";
+    audio.load();
+    audio.play();
+  }
+
+  playYellow(){
+    let audio = new Audio();
+    audio.src = "../../../assets/simonSound3.mp3";
+    audio.load();
+    audio.play();
+  }
+
+  playBlue(){
+    let audio = new Audio();
+    audio.src = "../../../assets/simonSound4.mp3";
+    audio.load();
+    audio.play();
+  }
 }

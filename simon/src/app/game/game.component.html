@@ -27,8 +27,8 @@
 </div>
 </mat-grid-list>-->
 <mat-grid-list cols="2" rowHeight="2:1">
-    <mat-grid-tile class="green" (click)="clickGreen()"></mat-grid-tile>
-    <mat-grid-tile class="red" (click)="clickRed()"></mat-grid-tile>
-    <mat-grid-tile class="yellow" (click)="clickYellow()"></mat-grid-tile>
-    <mat-grid-tile class="blue" (click)="clickBlue()"></mat-grid-tile>
+    <mat-grid-tile class="green" (click)="clickGreen()" (click)="playGreen()" ></mat-grid-tile>
+    <mat-grid-tile class="red" (click)="clickRed()" (click)="playRed()"></mat-grid-tile>
+    <mat-grid-tile class="yellow" (click)="clickYellow()" (click)="playYellow()"></mat-grid-tile>
+    <mat-grid-tile class="blue" (click)="clickBlue()" (click)="playBlue()"></mat-grid-tile>
   </mat-grid-list>
