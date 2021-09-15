@@ -9,7 +9,7 @@ import{Color} from '../models/color';
 })
 export class GameComponent implements OnInit {
 
-  userList = [];
+  userList:number[] = [];
   simonList: number[]= [];
   isClickedGreen = false;
   isClickedRed = false;
@@ -38,19 +38,19 @@ export class GameComponent implements OnInit {
 
   clickGreen(){
     console.log(1);
-    this.simonList.push(1)
+    this.userList.push(1)
   }
   clickRed(){
     console.log(2);
-    this.simonList.push(2)
+    this.userList.push(2)
   }
   clickYellow(){
     console.log(3);
-    this.simonList.push(3)
+    this.userList.push(3)
   }
   clickBlue(){
     console.log(4);
-    this.simonList.push(4)
+    this.userList.push(4)
   }
 
   playGreen(){
@@ -83,5 +83,9 @@ export class GameComponent implements OnInit {
 
   highlightGreen(){
     
+  }
+
+  arrayCheck(){
+    console.log(this.userList)
   }
 }
