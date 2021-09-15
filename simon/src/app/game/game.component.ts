@@ -10,7 +10,6 @@ import{Color} from '../models/color';
 export class GameComponent implements OnInit {
 
   userList:number[] = [];
-  simonList: number[]= [];
   isClickedGreen = false;
   isClickedRed = false;
   isClickedYellow = false;
@@ -30,10 +29,8 @@ export class GameComponent implements OnInit {
   //creates the sequence
   generateSequence():void{
     this.numLevel++;
-
-    for(let i = 0; i < this.numLevel; ++i){
-      this.sequence[i] = Math.ceil(4  *Math.random());
-    }
+    this.sequence.push(Math.ceil(4 * Math.random()));
+    console.log(this.sequence);
   }
 
   clickGreen(){

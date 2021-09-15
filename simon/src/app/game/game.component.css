@@ -12,6 +12,11 @@
  animation-name: colorchangered;
  animation-duration: .15s;
 }
+.red:active {
+    background-color: red;
+    animation-name: colorchangered;
+    animation-duration: .15s;
+   }
 @keyframes colorchangered {
  from {background-color: #FF0000;}
  to {background-color: lightcoral;}
