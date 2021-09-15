@@ -1,18 +1,19 @@
 <app-heading></app-heading>
 
 <mat-grid-list cols="2" rowHeight="2:1">
-    <mat-grid-tile class="green" (click)="clickGreen()" 
+    <mat-grid-tile class="green" id="green" (click)="clickGreen()" 
         (click)="isClickedGreen=!isClickedGreen" [class.limeGreen]="isClickedGreen" 
         (click)="playGreen()" ></mat-grid-tile>
-    <mat-grid-tile class="red" (click)="clickRed()" 
+    <mat-grid-tile class="red" id="red" (click)="clickRed()" 
         (click)="isClickedRed=!isClickedRed" [class.lightRed]="isClickedRed" 
         (click)="playRed()"></mat-grid-tile>
-    <mat-grid-tile class="yellow" (click)="clickYellow()" 
+    <mat-grid-tile class="yellow" id="yellow" (click)="clickYellow()" 
         (click)="isClickedYellow=!isClickedYellow" [class.lightYellow]="isClickedYellow" 
         (click)="playYellow()"></mat-grid-tile>
-    <mat-grid-tile class="blue" (click)="clickBlue()" 
+    <mat-grid-tile class="blue" id="blue" (click)="clickBlue()" 
         (click)="isClickedBlue=!isClickedBlue" [class.lightBlue]="isClickedBlue" 
         (click)="playBlue()"></mat-grid-tile>
   </mat-grid-list>
   <button (click)="arrayCheck()">Array Check</button>
   <button (click)="generateSequence()">Start</button>
+  <app-gameover></app-gameover>

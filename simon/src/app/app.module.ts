@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeadingComponent } from './heading/heading.component';
 import { GameComponent } from './game/game.component';
+import { GameoverComponent } from './gameover/gameover.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeadingComponent,
-    GameComponent
+    GameComponent,
+    GameoverComponent
   ],
   imports: [
     BrowserModule,

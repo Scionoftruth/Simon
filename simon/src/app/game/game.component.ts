@@ -36,6 +36,7 @@ export class GameComponent implements OnInit {
   clickGreen(){
     console.log(1);
     this.userList.push(1)
+    //document.getElementsByClassName('green')[0].style.animation="colorchangegreen";
   }
   clickRed(){
     console.log(2);
