@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatGridListModule } from '@angular/material/grid-list';
+import{Color} from '../models/color';
 
 @Component({
   selector: 'app-game',
@@ -18,6 +19,21 @@ export class GameComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  //game generated sequence
+  sequence:number[] = [];
+  
+  //level of game which corresponds to number of tones
+  numLevel:number = 0;
+
+  //creates the sequence
+  generateSequence():void{
+    this.numLevel++;
+
+    for(let i = 0; i < this.numLevel; ++i){
+      this.sequence[i] = Math.ceil(4  *Math.random());
+    }
   }
 
   clickGreen(){

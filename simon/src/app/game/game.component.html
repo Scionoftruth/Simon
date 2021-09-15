@@ -44,6 +44,9 @@
     <button mat-button id="yellow">Yellow</button>
 </div>
 </mat-grid-list>-->
+<app-heading></app-heading>
+
+
 <mat-grid-list cols="2" rowHeight="2:1">
     <mat-grid-tile class="green" (click)="clickGreen()" (click)="isClickedGreen=!isClickedGreen" [class.limeGreen]="isClickedGreen" (click)="playGreen()" ></mat-grid-tile>
     <mat-grid-tile class="red" (click)="clickRed()" (click)="playRed()"></mat-grid-tile>
