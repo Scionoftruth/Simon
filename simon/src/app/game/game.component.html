@@ -1,55 +1,16 @@
-<style>
-    .green {
-     background: green;
-  }
-  .red {
-  background-color: red;
-  animation-name: colorchange;
-  animation-duration: .15s;
-}
-@keyframes colorchange {
-  from {background-color: #FF0000;}
-  to {background-color: #e67373;}
-}
-  .yellow {
-     background: yellow;
-  }
-  .blue {
-     background: blue;
-  }
-  .limeGreen{
-      background: limegreen;
-  }
-  .lightRed{
-      background: lightcoral;
-  }
-  .lightYellow{
-      background: lightgoldenrodyellow;
-  }
-  .lightBlue{
-      background: lightblue;
-  }
-  </style>
-<!--<mat-grid-list cols="2" rowHeight="2:1">
-<mat-grid-tile>
-    <button mat-button id="green">Green</button>
-</mat-grid-tile>
-<div>
-    <button mat-button id="red">Red</button>
-</div>
-<div>
-    <button mat-button id="blue">Blue</button>
-</div>
-<div>
-    <button mat-button id="yellow">Yellow</button>
-</div>
-</mat-grid-list>-->
 <app-heading></app-heading>
 
-
 <mat-grid-list cols="2" rowHeight="2:1">
-    <mat-grid-tile class="green" (click)="clickGreen()" (click)="isClickedGreen=!isClickedGreen" [class.limeGreen]="isClickedGreen" (click)="playGreen()" ></mat-grid-tile>
-    <mat-grid-tile class="red" (click)="clickRed()" (click)="playRed()"></mat-grid-tile>
-    <mat-grid-tile class="yellow" (click)="clickYellow()" (click)="isClickedYellow=!isClickedYellow" [class.lightYellow]="isClickedYellow" (click)="playYellow()"></mat-grid-tile>
-    <mat-grid-tile class="blue" (click)="clickBlue()" (click)="isClickedRed=!isClickedRed" [class.lightRed]="isClickedRed" (click)="playBlue()"></mat-grid-tile>
+    <mat-grid-tile class="green" (click)="clickGreen()" 
+        (click)="isClickedGreen=!isClickedGreen" [class.limeGreen]="isClickedGreen" 
+        (click)="playGreen()" ></mat-grid-tile>
+    <mat-grid-tile class="red" (click)="clickRed()" 
+        (click)="isClickedRed=!isClickedRed" [class.lightRed]="isClickedRed" 
+        (click)="playRed()"></mat-grid-tile>
+    <mat-grid-tile class="yellow" (click)="clickYellow()" 
+        (click)="isClickedYellow=!isClickedYellow" [class.lightYellow]="isClickedYellow" 
+        (click)="playYellow()"></mat-grid-tile>
+    <mat-grid-tile class="blue" (click)="clickBlue()" 
+        (click)="isClickedBlue=!isClickedBlue" [class.lightBlue]="isClickedBlue" 
+        (click)="playBlue()"></mat-grid-tile>
   </mat-grid-list>

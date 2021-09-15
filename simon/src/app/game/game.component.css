@@ -1,0 +1,30 @@
+.green {
+    background: green;
+ }
+ .red {
+ background-color: red;
+ animation-name: colorchange;
+ animation-duration: .15s;
+}
+@keyframes colorchange {
+ from {background-color: #FF0000;}
+ to {background-color: #e67373;}
+}
+ .yellow {
+    background: yellow;
+ }
+ .blue {
+    background: blue;
+ }
+ .limeGreen{
+     background: limegreen;
+ }
+ .lightRed{
+     background: lightcoral;
+ }
+ .lightYellow{
+     background: lightgoldenrodyellow;
+ }
+ .lightBlue{
+     background: lightblue;
+ }
