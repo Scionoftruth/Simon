@@ -1,1 +1,34 @@
-<p>game works!</p>
+<style>
+    .green {
+     background: green;
+  }
+  .red {
+     background: red;
+  }
+  .yellow {
+     background: yellow;
+  }
+  .blue {
+     background: blue;
+  }
+  </style>
+<!--<mat-grid-list cols="2" rowHeight="2:1">
+<mat-grid-tile>
+    <button mat-button id="green">Green</button>
+</mat-grid-tile>
+<div>
+    <button mat-button id="red">Red</button>
+</div>
+<div>
+    <button mat-button id="blue">Blue</button>
+</div>
+<div>
+    <button mat-button id="yellow">Yellow</button>
+</div>
+</mat-grid-list>-->
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile class="green" (click)="clickGreen()"></mat-grid-tile>
+    <mat-grid-tile class="red" (click)="clickRed()"></mat-grid-tile>
+    <mat-grid-tile class="yellow" (click)="clickYellow()"></mat-grid-tile>
+    <mat-grid-tile class="blue" (click)="clickBlue()"></mat-grid-tile>
+  </mat-grid-list>
