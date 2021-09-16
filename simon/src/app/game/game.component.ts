@@ -34,21 +34,21 @@ export class GameComponent implements OnInit {
   }
 
   clickGreen(){
-    console.log(1);
-    this.userList.push(1)
+    console.log(Color.GREEN);
+    this.userList.push(Color.GREEN)
     //document.getElementsByClassName('green')[0].style.animation="colorchangegreen";
   }
   clickRed(){
-    console.log(2);
-    this.userList.push(2)
+    console.log(Color.RED);
+    this.userList.push(Color.RED)
   }
   clickYellow(){
-    console.log(3);
-    this.userList.push(3)
+    console.log(Color.YELLOW);
+    this.userList.push(Color.YELLOW)
   }
   clickBlue(){
-    console.log(4);
-    this.userList.push(4)
+    console.log(Color.BLUE);
+    this.userList.push(Color.BLUE)   
   }
 
   playGreen(){

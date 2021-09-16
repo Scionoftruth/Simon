@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-heading',
@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeadingComponent implements OnInit {
 
+    
+  @Input()level:number = 0;
+  
   constructor() { }
 
   ngOnInit(): void {
