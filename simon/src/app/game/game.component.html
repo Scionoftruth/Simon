@@ -1,11 +1,22 @@
-<app-heading [level] = 'numLevel' [isGameOver]= 'isGameOver'></app-heading>
+<app-heading [level]='numLevel' [isGameOver]='isGameOver'></app-heading>
+<div>
+     <button class="button" (click)="showHint()">Hint</button>
+     <span *ngIf= "!isGameStart"><button class="button" (click)="startGame()">Start</button></span>
+     <span *ngIf= "isGameStart"><button class="button" (click)="resetGame()">Reset</button></span>
+     <span *ngIf="displayHint"><span *ngFor="let i of sequence" style="padding-left:1%;">{{i}}</span></span>
+</div>
 
-<button (click)="arrayCheck()">Array Check</button>
-<button (click)="startGame()">Start</button>
 <mat-grid-list cols="2" rowHeight="2:1">
-    <mat-grid-tile [style.background-color]="isClickedGreen? 'lightGreen':'green'" (click)="clickButton('green')">
-         <p>Green</p></mat-grid-tile>
-    <mat-grid-tile [style.background-color]="isClickedRed? 'lightCoral':'red'"  (click)="clickButton('red')"> <p>Red</p></mat-grid-tile>
-    <mat-grid-tile [style.background-color]="isClickedYellow? 'lightYellow':'yellow'"  (click)="clickButton('yellow')"> <p>Yellow</p></mat-grid-tile>
-    <mat-grid-tile [style.background-color]="isClickedBlue? 'lightBlue':'blue'"  (click)="clickButton('blue')"> <p>Blue</p></mat-grid-tile>
-  </mat-grid-list>
+     <mat-grid-tile [style.background-color]="isClickedGreen? 'lightGreen':'green'" (click)="clickButton('green')">
+          <p>Green</p>
+     </mat-grid-tile>
+     <mat-grid-tile [style.background-color]="isClickedRed? 'lightCoral':'red'" (click)="clickButton('red')">
+          <p>Red</p>
+     </mat-grid-tile>
+     <mat-grid-tile [style.background-color]="isClickedYellow? 'lightYellow':'yellow'" (click)="clickButton('yellow')">
+          <p>Yellow</p>
+     </mat-grid-tile>
+     <mat-grid-tile [style.background-color]="isClickedBlue? 'lightBlue':'blue'" (click)="clickButton('blue')">
+          <p>Blue</p>
+     </mat-grid-tile>
+</mat-grid-list>

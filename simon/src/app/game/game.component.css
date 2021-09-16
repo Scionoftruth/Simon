@@ -1,29 +1,6 @@
-.green {
-    background-color: green;    
- }
- 
- .red {
- background-color: red;
- 
+.button{
+    margin-left:1%;
+    margin-right:1%;
+    margin-bottom:1%;
+    font-size:12px;
 }
-
- .yellow {
-    background-color: yellow;    
- }
- 
- .blue {
-    background: blue;    
- }
-
- .lightGreen{
-     background: limegreen;
- }
- .brightRed{
-    background: lightCoral;
- }
- .lightYellow{
-     background: lightgoldenrodyellow;
- }
- .lightBlue{
-     background: lightblue;
- }

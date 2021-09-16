@@ -33,16 +33,23 @@ export class GameComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  resetGame():void{
+    this.isGameStart = false;
+    setTimeout(()=>this.startGame(),1000);
+  }
   startGame(): void {
     console.log("gameStart "+ this.isGameStart+" game over "+ this.isGameOver);
     if (!this.isGameStart) {
 
+      //reseting game paramters
       this.isGameOver = false;
-
       this.isGameStart = true;
+      this.displayHint = false;
+
       this.sequence.length = 0;
       this.userList.length = 0;
       this.numLevel = 0;
+
       this.generateSequence();
       this.showSequence();
     }
@@ -125,6 +132,8 @@ export class GameComponent implements OnInit {
       if (this.sequence.length === this.userList.length && !this.isGameOver) {
         await this.delay(1000);
         this.userList.length = 0;
+        this.displayHint = false;
+        
         this.generateSequence();
         this.showSequence();
       }
@@ -195,7 +204,9 @@ export class GameComponent implements OnInit {
 
   }
 
-  arrayCheck() {
-    console.log(this.userList)
+  //shows the sequence to the player
+  displayHint:boolean = false;
+  showHint():void {
+    this.displayHint=!this.displayHint;
   }
 }
