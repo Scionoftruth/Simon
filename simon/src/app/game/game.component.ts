@@ -20,6 +20,9 @@ export class GameComponent implements OnInit {
 
   isGameOver: boolean = false;
 
+  //check if the game has started
+  isGameStart: boolean = false;
+
   isClickedGreen = false;
   isClickedRed = false;
   isClickedYellow = false;
@@ -31,9 +34,18 @@ export class GameComponent implements OnInit {
   }
 
   startGame(): void {
-    this.numLevel = 0;
-    this.generateSequence();
-    this.showSequence();
+    console.log("gameStart "+ this.isGameStart+" game over "+ this.isGameOver);
+    if (!this.isGameStart) {
+
+      this.isGameOver = false;
+
+      this.isGameStart = true;
+      this.sequence.length = 0;
+      this.userList.length = 0;
+      this.numLevel = 0;
+      this.generateSequence();
+      this.showSequence();
+    }
   }
 
   //creates the sequence
@@ -43,27 +55,23 @@ export class GameComponent implements OnInit {
     console.log(this.sequence);
   }
 
-  async showSequence() {
+  async showSequence(): Promise<any> {
     for (let i = 0; i < this.sequence.length; i++) {
       switch (this.sequence[i]) {
-        case 1: this.isClickedGreen =true;
-        await this.playGreen();
-        //this.isClickedGreen =false;
-
+        case 1: this.isClickedGreen = true;
+          this.playGreen();
           break;
-        case 2: this.isClickedRed =true;
-        this.playRed(); break;
-        case 3: this.isClickedYellow =true;
-        this.playYellow(); break;
-        case 4: this.isClickedBlue =true;
-        this.playBlue(); break;
+        case 2: this.isClickedRed = true;
+          this.playRed(); break;
+        case 3: this.isClickedYellow = true;
+          this.playYellow(); break;
+        case 4: this.isClickedBlue = true;
+          this.playBlue(); break;
       }
+
       //add a delay to the sequence
       await this.delay(700);
       setTimeout(() => this.resetButton(), 700);
-
-
-
     }
 
   }
@@ -81,11 +89,12 @@ export class GameComponent implements OnInit {
 
     if (this.userList[this.userList.length - 1] != this.sequence[this.userList.length - 1]) {
       this.isGameOver = true;
+      this.isGameStart = false;
     }
   }
 
   async clickButton(color: string) {
-    if (!this.isGameOver) {
+    if (!this.isGameOver && this.isGameStart) {
       switch (color) {
         case "green": this.clickGreen();
           this.playGreen();
@@ -97,7 +106,7 @@ export class GameComponent implements OnInit {
           break;
         case "yellow": this.clickYellow();
           this.playYellow();
-          
+
           break;
         case "blue": this.clickBlue();
           this.playBlue();
@@ -106,20 +115,20 @@ export class GameComponent implements OnInit {
       }
       this.compareSequence();
       setTimeout(() => this.resetButton(), 1000);
-      
-      console.log("user list is " );
+
+      console.log("user list is ");
       console.log(this.userList);
       console.log(this.userList.length);
       console.log("num Level");
       console.log(this.sequence.length);
       //next round
-      if(this.sequence.length === this.userList.length &&!this.isGameOver){
-        //await this.delay(1000);
+      if (this.sequence.length === this.userList.length && !this.isGameOver) {
+        await this.delay(1000);
         this.userList.length = 0;
         this.generateSequence();
         this.showSequence();
       }
-      
+
     }
   }
 
@@ -130,21 +139,25 @@ export class GameComponent implements OnInit {
     this.isClickedBlue = false;
   }
 
-//userfunctions
+  //userfunctions
   clickGreen() {
+    this.isClickedGreen = true;
     console.log(Color.GREEN);
     this.userList.push(Color.GREEN);
   }
   clickRed() {
+    this.isClickedRed = true;
     console.log(Color.RED);
     this.userList.push(Color.RED);
   }
   clickYellow() {
+    this.isClickedYellow = true;
     console.log(Color.YELLOW);
     this.userList.push(Color.YELLOW);
 
   }
   clickBlue() {
+    this.isClickedBlue = true;
     console.log(Color.BLUE);
     this.userList.push(Color.BLUE);
 

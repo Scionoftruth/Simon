@@ -3,11 +3,9 @@
 <button (click)="arrayCheck()">Array Check</button>
 <button (click)="startGame()">Start</button>
 <mat-grid-list cols="2" rowHeight="2:1">
-    <mat-grid-tile [style.background-color]="isClickedGreen? 'lightGreen':'green'" (click)="isClickedGreen = true" (click)="clickButton('green')">
+    <mat-grid-tile [style.background-color]="isClickedGreen? 'lightGreen':'green'" (click)="clickButton('green')">
          <p>Green</p></mat-grid-tile>
-    <mat-grid-tile [style.background-color]="isClickedRed? 'lightCoral':'red'" (click)="isClickedRed = true" (click)="clickButton('red')"> <p>Red</p></mat-grid-tile>
-    <mat-grid-tile [style.background-color]="isClickedYellow? 'lightYellow':'yellow'" (click)="isClickedYellow = true" (click)="clickButton('yellow')"> <p>Yellow</p></mat-grid-tile>
-    <mat-grid-tile [style.background-color]="isClickedBlue? 'lightBlue':'blue'" (click)="isClickedBlue = true" (click)="clickButton('blue')"> <p>Blue</p></mat-grid-tile>
+    <mat-grid-tile [style.background-color]="isClickedRed? 'lightCoral':'red'"  (click)="clickButton('red')"> <p>Red</p></mat-grid-tile>
+    <mat-grid-tile [style.background-color]="isClickedYellow? 'lightYellow':'yellow'"  (click)="clickButton('yellow')"> <p>Yellow</p></mat-grid-tile>
+    <mat-grid-tile [style.background-color]="isClickedBlue? 'lightBlue':'blue'"  (click)="clickButton('blue')"> <p>Blue</p></mat-grid-tile>
   </mat-grid-list>
-
-  <app-gameover></app-gameover>
