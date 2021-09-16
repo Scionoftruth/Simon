@@ -9,7 +9,8 @@ export class HeadingComponent implements OnInit {
 
     
   @Input()level:number = 0;
-  
+  @Input()isGameOver:boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {

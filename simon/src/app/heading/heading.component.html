@@ -2,5 +2,5 @@
 <div style = "text-align:center"><h1> Ang-4 Simon</h1></div>
   
   <p> Current level : {{level}}</p>
-  <!--<p> Press [Space] to Start</p>
-  <p> You Lose</p>-->
+  
+  <div *ngIf = "isGameOver" style = "text-align:center; background-color:red"> <p> You Lose</p></div>
