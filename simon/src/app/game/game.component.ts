@@ -46,15 +46,23 @@ export class GameComponent implements OnInit {
   async showSequence() {
     for (let i = 0; i < this.sequence.length; i++) {
       switch (this.sequence[i]) {
-        case 1: this.playGreen();
+        case 1: this.isClickedGreen =true;
+        await this.playGreen();
+        //this.isClickedGreen =false;
 
           break;
-        case 2: this.playRed(); break;
-        case 3: this.playYellow(); break;
-        case 4: this.playBlue(); break;
+        case 2: this.isClickedRed =true;
+        this.playRed(); break;
+        case 3: this.isClickedYellow =true;
+        this.playYellow(); break;
+        case 4: this.isClickedBlue =true;
+        this.playBlue(); break;
       }
       //add a delay to the sequence
       await this.delay(700);
+      setTimeout(() => this.resetButton(), 700);
+
+
 
     }
 
@@ -71,12 +79,12 @@ export class GameComponent implements OnInit {
   //compare the current's user input to the generated sequece
   compareSequence(): void {
 
-    if (this.userList[length - 1] != this.sequence[length - 1]) {
+    if (this.userList[this.userList.length - 1] != this.sequence[this.userList.length - 1]) {
       this.isGameOver = true;
     }
   }
 
-  clickButton(color: string): void {
+  async clickButton(color: string) {
     if (!this.isGameOver) {
       switch (color) {
         case "green": this.clickGreen();
@@ -98,6 +106,19 @@ export class GameComponent implements OnInit {
       }
       this.compareSequence();
       setTimeout(() => this.resetButton(), 1000);
+      
+      console.log("user list is " );
+      console.log(this.userList);
+      console.log(this.userList.length);
+      console.log("num Level");
+      console.log(this.sequence.length);
+      //next round
+      if(this.sequence.length == this.userList.length &&!this.isGameOver)
+        //await this.delay(1000);
+        this.userList.length = 0;
+        this.generateSequence();
+        this.showSequence();
+      
     }
   }
 
@@ -108,6 +129,7 @@ export class GameComponent implements OnInit {
     this.isClickedBlue = false;
   }
 
+//userfunctions
   clickGreen() {
     console.log(Color.GREEN);
     this.userList.push(Color.GREEN);
