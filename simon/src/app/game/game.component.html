@@ -1,9 +1,10 @@
-<app-heading [level] = 'numLevel'></app-heading>
+<app-heading [level] = 'numLevel' [isGameOver]= 'isGameOver'></app-heading>
 
+<button (click)="arrayCheck()">Array Check</button>
+<button (click)="startGame()">Start</button>
 <mat-grid-list cols="2" rowHeight="2:1">
-    <mat-grid-tile class="green" id="green" (click)="clickGreen()" 
-        (click)="isClickedGreen=!isClickedGreen" [class.limeGreen]="isClickedGreen" 
-        (click)="playGreen()" ></mat-grid-tile>
+    <mat-grid-tile [style.background-color]="isClickedGreen? 'lightGreen':'green'" (click)="isClickedGreen = true" (click)="clickButton('green')">
+         <p>Green</p></mat-grid-tile>
     <mat-grid-tile class="red" id="red" (click)="clickRed()" 
         (click)="isClickedRed=!isClickedRed" [class.lightRed]="isClickedRed" 
         (click)="playRed()"></mat-grid-tile>
@@ -14,6 +15,5 @@
         (click)="isClickedBlue=!isClickedBlue" [class.lightBlue]="isClickedBlue" 
         (click)="playBlue()"></mat-grid-tile>
   </mat-grid-list>
-  <button (click)="arrayCheck()">Array Check</button>
-  <button (click)="generateSequence()">Start</button>
+
   <app-gameover></app-gameover>
