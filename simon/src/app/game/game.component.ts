@@ -113,11 +113,12 @@ export class GameComponent implements OnInit {
       console.log("num Level");
       console.log(this.sequence.length);
       //next round
-      if(this.sequence.length == this.userList.length &&!this.isGameOver)
+      if(this.sequence.length === this.userList.length &&!this.isGameOver){
         //await this.delay(1000);
         this.userList.length = 0;
         this.generateSequence();
         this.showSequence();
+      }
       
     }
   }
