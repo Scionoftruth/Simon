@@ -1,6 +1,9 @@
 
 <div style = "text-align:center"><h1> Ang-4 Simon</h1></div>
   
-  <p> Current level : {{level}}</p>
+  <div class = 'container'>
+    <p> Current level : {{level}}</p>
+    <p class = 'adj test'  [ngClass] = 'adjBackground'>{{adjective}}</p>
+  </div>
   
-  <div *ngIf = "isGameOver" style = "text-align:center; background-color:red"> <p> You Lose</p></div>
+  <div *ngIf = "isGameOver" class = "gameOver"> <p> You Lose</p></div>
