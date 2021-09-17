@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatGridListModule } from '@angular/material/grid-list';
 import { Color } from '../models/color';
 
 @Component({
@@ -33,12 +32,12 @@ export class GameComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  resetGame():void{
+  resetGame(): void {
     this.isGameStart = false;
-    setTimeout(()=>this.startGame(),1000);
+    setTimeout(() => this.startGame(), 1000);
   }
+
   startGame(): void {
-    console.log("gameStart "+ this.isGameStart+" game over "+ this.isGameOver);
     if (!this.isGameStart) {
 
       //reseting game paramters
@@ -59,10 +58,12 @@ export class GameComponent implements OnInit {
   generateSequence(): void {
     this.numLevel++;
     this.sequence.push(Math.ceil(4 * Math.random()));
+
     console.log(this.sequence);
   }
 
   async showSequence(): Promise<any> {
+
     for (let i = 0; i < this.sequence.length; i++) {
       switch (this.sequence[i]) {
         case 1: this.isClickedGreen = true;
@@ -80,10 +81,12 @@ export class GameComponent implements OnInit {
       await this.delay(700);
       setTimeout(() => this.resetButton(), 700);
     }
-
   }
 
-  //not my code
+  /* 
+  src : https://www.geeksforgeeks.org/
+  how-to-delay-a-loop-in-javascript-using-async-await-with-promise/ 
+  */
   delay(milisec: number) {
     return new Promise(resolve => {
       setTimeout(() => { resolve('') }, milisec);
@@ -97,10 +100,12 @@ export class GameComponent implements OnInit {
     if (this.userList[this.userList.length - 1] != this.sequence[this.userList.length - 1]) {
       this.isGameOver = true;
       this.isGameStart = false;
+      this.playGameOver();
     }
   }
 
   async clickButton(color: string) {
+
     if (!this.isGameOver && this.isGameStart) {
       switch (color) {
         case "green": this.clickGreen();
@@ -123,21 +128,15 @@ export class GameComponent implements OnInit {
       this.compareSequence();
       setTimeout(() => this.resetButton(), 1000);
 
-      console.log("user list is ");
-      console.log(this.userList);
-      console.log(this.userList.length);
-      console.log("num Level");
-      console.log(this.sequence.length);
       //next round
       if (this.sequence.length === this.userList.length && !this.isGameOver) {
         await this.delay(1000);
         this.userList.length = 0;
         this.displayHint = false;
-        
+
         this.generateSequence();
         this.showSequence();
       }
-
     }
   }
 
@@ -151,25 +150,19 @@ export class GameComponent implements OnInit {
   //userfunctions
   clickGreen() {
     this.isClickedGreen = true;
-    console.log(Color.GREEN);
     this.userList.push(Color.GREEN);
   }
   clickRed() {
     this.isClickedRed = true;
-    console.log(Color.RED);
     this.userList.push(Color.RED);
   }
   clickYellow() {
     this.isClickedYellow = true;
-    console.log(Color.YELLOW);
     this.userList.push(Color.YELLOW);
-
   }
   clickBlue() {
     this.isClickedBlue = true;
-    console.log(Color.BLUE);
     this.userList.push(Color.BLUE);
-
   }
 
   playGreen() {
@@ -200,13 +193,16 @@ export class GameComponent implements OnInit {
     audio.play();
   }
 
-  highlightGreen() {
-
+  playGameOver() {
+    let audio = new Audio();
+    audio.src = "../../../assets/simonLose.mp3";
+    audio.load();
+    audio.play();
   }
 
   //shows the sequence to the player
-  displayHint:boolean = false;
-  showHint():void {
-    this.displayHint=!this.displayHint;
+  displayHint: boolean = false;
+  showHint(): void {
+    this.displayHint = !this.displayHint;
   }
 }

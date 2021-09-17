@@ -1,0 +1,37 @@
+.container{
+    display:flex;
+    justify-content:space-between;
+    padding:15px;
+}
+.adj{
+    
+    margin-left:20%;
+    font-family:'Kristen ITC';
+    font-size:14px;
+    padding-left:10px;
+    padding-right:10px;
+    
+}
+.clear{
+   background-color:white; 
+}
+.first{
+    color:#fff5bb;
+    background-color:#cd7f32;
+}
+.second{
+    color:#000000;
+    background-color:#C0C0C0;
+}
+.third{
+    color:black;
+    background-color:#FFD700;
+}
+.gameOver{
+    text-align:center;
+     background-color:#df4c4c;
+     padding:10px;
+     font-size: 20px;
+     color:black;
+}
+
