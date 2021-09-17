@@ -99,8 +99,7 @@ export class GameComponent implements OnInit {
 
     if (this.userList[this.userList.length - 1] != this.sequence[this.userList.length - 1]) {
       this.isGameOver = true;
-      this.isGameStart = false;
-      this.playGameOver();
+      this.isGameStart = false;      
     }
   }
 
@@ -193,12 +192,7 @@ export class GameComponent implements OnInit {
     audio.play();
   }
 
-  playGameOver() {
-    let audio = new Audio();
-    audio.src = "../../../assets/simonLose.mp3";
-    audio.load();
-    audio.play();
-  }
+
 
   //shows the sequence to the player
   displayHint: boolean = false;
