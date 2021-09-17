@@ -12,6 +12,9 @@
     padding-right:10px;
     
 }
+.clear{
+   background-color:white; 
+}
 .first{
     color:#fff5bb;
     background-color:#cd7f32;
@@ -29,6 +32,6 @@
      background-color:#df4c4c;
      padding:10px;
      font-size: 20px;
-     color:#4e4d4d;
+     color:black;
 }
 

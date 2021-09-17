@@ -16,7 +16,7 @@ export class HeadingComponent implements OnInit,OnChanges {
   secondLevelAdjective:string[] = ['WONDERFUL','SUBLIME','DELIGHTFUL','SPLENDID','AMAZING'];
   thirdLevelAdjective:string[] = ['MARVELOUS','GLORIOUS','EXQUISITE','EXCEPTIONAL','PHENOMINAL','ASTONISHING'];
 
-  adjBackground:string = '';
+  adjBackground:string = 'clear';
 
   adjective:string="";
 
@@ -31,7 +31,11 @@ export class HeadingComponent implements OnInit,OnChanges {
   }
 
   setAdjective():void{
-    
+
+    if (this.level >=0 && this.level <5 && !this.isGameOver){
+      this.adjBackground = 'clear';
+      this.adjective ="";
+    }
     if (this.level >=5 && this.level <=10 && !this.isGameOver){
       this.adjBackground = 'first';
       this.adjective = this.firstLevelAdjective[Math.floor(this.firstLevelAdjective.length * Math.random())];
